@@ -1,0 +1,29 @@
+
+class Solution:
+    def backspaceCompare(self, s: str, t: str) -> bool:
+        match1 = []
+        match2 = []
+        for i in range(len(s)):
+            match1.append(s[i])
+            if s[i]=="#" and match1!=["#"]:
+                print(s, match1,"c")
+                match1.pop()
+                print("wtf",match1)
+                match1.pop()
+        for j in range(len(t)):
+            match2.append(t[j])
+            if t[j]=="#" and match2!=["#"]:
+                match2.pop()
+                match2.pop()
+        #match1 = [match1.remove("#") if "#" in match1]
+        #match2 = [match2.remove("#") if "#" in match2]
+        if "#" in match1:
+            match1.remove("#")
+        if "#" in match2:
+            match2.remove("#")
+        print(match2,match1, "what")
+        #a = set(match1) & set(match2)
+        if (match1) != (match2): # and len(list(a)==len(match1)) :
+            return False
+        else :
+            return True
