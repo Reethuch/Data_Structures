@@ -1,4 +1,4 @@
-
+#yet to write optimized sol
 class Solution:
     def backspaceCompare(self, s: str, t: str) -> bool:
         match1 = []
