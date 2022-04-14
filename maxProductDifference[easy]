@@ -8,3 +8,4 @@ class Solution:
         nums.pop(0)
         min2 = nums[0]
         return max1*max2 - min1*min2
+#solved in 5 min
