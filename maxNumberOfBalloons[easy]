@@ -1,0 +1,16 @@
+# 1189. Maximum Number of Balloons
+class Solution:
+    def maxNumberOfBalloons(self, text: str) -> int:
+        balloon = {"b":"0","a":"0","l":"0","o":"0","n":"0"}
+        for keys in balloon:
+            for i in text:
+                if(keys==i):
+                    balloon[keys] = int(balloon[keys])+1 #value=keys.value+1
+        #print(balloon)
+        k = list(balloon.values())
+        #print(k)
+        k[2] = int(int(k[2])/2)
+        k[3] = int(int(k[3])/2)
+        kk = [int(i) for i in k]
+        #print(k)
+        return min(kk) 
