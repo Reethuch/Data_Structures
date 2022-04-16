@@ -1,0 +1,31 @@
+#optimized solution only
+class Solution:
+    def largestInteger(self, num: int) -> int:
+        #num.split(str(num))
+        #print(str(num)[0])
+        e_list = []
+        e_ind = 0
+        o_list = []
+        for i in str(num):
+            if int(i)%2==0 :
+                e_list.append(i)
+            else :
+                o_list.append(i)
+        e_list.sort(reverse= True)
+        o_list.sort(reverse=True)
+        o = 0
+        e = 0
+        result = ""
+        for i in (str(num)):
+            if int(i)%2==0:
+                result = result + str(e_list[e])
+                e = e+1
+            else :
+                result = result + str(o_list[o])
+                o = o+1
+        return (result)
+            
+                    
+                
+        
+        
