@@ -1,0 +1,23 @@
+class Solution:
+    def balancedString(self, s: str) -> int:
+        n = int(len(s)/4)
+        print(n)
+        temp = 0
+        new = {"some":1}
+        new2={}
+        for i in s:
+            print(i)
+            if i not in new.keys():
+                new1 = {i:1}
+                new.update(new1)
+                print(new)
+            else :
+                new[i] = new[i]+1
+        print(new,"chudadm")
+        #sorted(new, key=lambda x: x['Name'])
+        while max(new.values())>n:
+            temp = max(new.values())-n + temp
+            max_key = max(new, key=new.get)
+            new.pop(max_key)
+        print(new,"chudam2")
+        return temp
