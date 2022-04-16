@@ -1,0 +1,11 @@
+#optimized: memory concept in this question is nice
+class Solution:
+    def removeElement(self, nums: List[int], val: int) -> int:
+        c = 0
+        for i in range(len(nums)):
+            if nums[i]==val:
+                nums[i]=51
+                c = c+1
+        nums.sort()
+        for j in range(c):
+            nums.pop()
