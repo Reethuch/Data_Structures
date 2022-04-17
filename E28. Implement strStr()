@@ -1,0 +1,24 @@
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        c = 0
+        visited = 0
+        for i in range(len(haystack)):
+            if needle[0]==haystack[i]:
+                if(needle==haystack[i:i+len(needle)]):
+                    visited = 1
+                    return i 
+        if visited!=1:
+            return -1
+            
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+#MOST OPTIMIZED:
+class Solution:
+    def strStr(self, haystack: str, needle: str) -> int:
+        if needle == "":
+            return 0
+        
+        for i in range(len(haystack) + 1 - len(needle)):
+            if haystack[i: i + len(needle)] == needle:
+                return i
+            
+        return -1
