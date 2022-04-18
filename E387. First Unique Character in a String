@@ -1,0 +1,15 @@
+class Solution:
+    def firstUniqChar(self, s: str) -> int:
+        new_d = {}
+        for i in s:
+            if i not in new_d.keys():
+                new_d[i] = 1
+            else :
+                new_d[i] = new_d[i] + 1
+        #print(new_d)
+        # for j in new_d.values():
+        #     if j==1
+        for j in range(len(s)):
+            if new_d[s[j]]==1:
+                return j
+        return -1
