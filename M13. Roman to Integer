@@ -1,0 +1,18 @@
+#Runtime: 44 ms, faster than 94.71% of Python3 online submissions for Roman to Integer.
+#Memory Usage: 13.8 MB, less than 98.79% of Python3 online submissions for Roman to Integer.
+class Solution:
+    def romanToInt(self, s: str) -> int:
+        r = {"I":1,"V":5,"X":10,"L":50,"C":100,"D":500,"M":1000}
+        res =0
+        prev = 0
+        # print(r.values())
+        for i in s[::-1]:
+            # print(i,"ok")
+            val = r[i]
+            if (val>=prev):
+                res = res+val
+            else :
+                res = res-val
+            prev = val
+        return res
+            
