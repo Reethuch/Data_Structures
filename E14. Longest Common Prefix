@@ -1,0 +1,23 @@
+#Runtime: 41 ms, faster than 68.24% of Python3 online submissions for Longest Common Prefix.
+#Memory Usage: 13.8 MB, less than 99.39% of Python3 online submissions for Longest Common Prefix.
+class Solution:
+    def longestCommonPrefix(self, strs: List[str]) -> str:
+        s =""
+        
+        ss=""
+        
+        k = min([len(i) for i in strs])
+        v = k
+        visited = 0
+        print(k)
+        while k:
+            sss = [j[v-k] for j in strs]
+            # print(sss,"pp")
+            if(len(list(set(sss)))==1):
+                # print(sss,"emo")
+                s=s+sss[0]
+                visited = 1
+            else:
+                return s
+            
+            k = k-1
