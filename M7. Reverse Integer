@@ -1,0 +1,16 @@
+class Solution:
+    def reverse(self, x: int) -> int:
+        y = str(x)
+        # if x<0 :
+        # y = y[1:]
+        y = y[::-1]
+        if(x>2147483648 or x<-2147483648):
+            return 0
+        if x<0:
+            if int(y[:-1])>2147483648:
+                return 0
+            return -int(y[:-1])
+        else :
+            if int(y)>2147483648:
+                return 0
+            return int(y)
