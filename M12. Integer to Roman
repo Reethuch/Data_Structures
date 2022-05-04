@@ -1,0 +1,61 @@
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        thousands = ["", "M", "MM", "MMM"]
+        hundreds = ["", "C", "CC", "CCC", "CD", "D", "DC", "DCC", "DCCC", "CM"]
+        tens = ["", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"]
+        ones = ["", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"]
+        return (thousands[num // 1000] + hundreds[num % 1000 // 100] 
+               + tens[num % 100 // 10] + ones[num % 10])
+               
+        #optimized
+        
+---------------------------------------------------
+class Solution:
+    def intToRoman(self, num: int) -> str:
+        op = ""
+        if num>3999:
+            return None
+        while num//1000>0:
+            op = op+"M"
+            num = num - 1000
+        while num>=900:
+            op = op+"CM"
+            num = num - 900
+        while num>=500:
+            op = op+"D"
+            num = num - 500
+        while num>=400:
+            op = op+"CD"
+            num = num - 400
+        while num>=100:
+            op = op+"C"
+            num = num - 100
+        while num>=90:
+            op = op+"XC"
+            num = num - 90
+        while num>=50:
+            op = op+"L"
+            num = num - 50
+        while num>=40:
+            op = op+"XL"
+            num = num - 40
+        while num>=10:
+            op = op+"X"
+            num = num - 10
+        while num>=9:
+            op = op+"IX"
+            num = num - 9
+        while num>=5:
+            op = op+"V"
+            num = num - 5
+        while num==4:
+            op = op+"IV"
+            num = num - 4
+        while num>0:
+            op = op+"I"
+            num = num - 1
+        
+            
+        print(num,op)
+        return op
+        
