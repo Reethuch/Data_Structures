@@ -1,0 +1,28 @@
+class Solution:
+    def isValid(self, s: str) -> bool:
+        braces = ['(', ')', '{', '}', '[',']']
+        b_dict = {
+            ")":"(",
+            "}":"{",
+            "]":"["
+        }
+        stack = []
+        if len(s)==0:
+            return True
+        for i in s:
+            if i not in braces:
+                pass
+            elif i in b_dict.values():
+                stack.append(i)
+            elif i in b_dict.keys() and len(stack)!=0:
+                print(stack,"see")
+                if stack.pop()==b_dict[i]:
+                    pass
+                else:
+                    return False
+            else:
+                return False
+        if len(stack)!=0:
+            return False
+        else:
+            return True
