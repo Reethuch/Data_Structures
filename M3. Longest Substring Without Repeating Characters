@@ -1,0 +1,26 @@
+class Solution:
+    def lengthOfLongestSubstring(self, s: str) -> int:
+        if len(s)==1:
+            return 1
+        if len(s)==2 and s[0]!=s[1]:
+            return 2
+        s = list(s)
+        new = []
+        max_score = 0
+        for i in range(len(s)):
+            # print(i,s[i])
+            j = i
+            new.append(s[i])
+            while True and (j<len(s)-1):
+                # print(j,"ekfwjf")
+                new.append(s[j+1])
+                j = j+1
+                score = len(list(set(new)))
+                # print("score:",score)
+                max_score = max(score, max_score)
+                if(score!=len(new)):
+                    new = []
+                    break
+            # print(max_score)
+        return max_score
+                
