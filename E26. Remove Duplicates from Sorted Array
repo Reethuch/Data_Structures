@@ -1,0 +1,11 @@
+class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:
+        k = 0
+        for i in range(len(nums)-1):
+            if nums[i+1]==nums[i]:
+                nums[i]=101
+            else:
+                k +=1
+                
+        nums.sort()
+        return k+1
