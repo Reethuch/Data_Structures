@@ -10,3 +10,12 @@ class Solution:
         print(l1.sort(),l2.sort())
         return (l1[:]==l2[:])
         
+# OPTIMIZED
+class Solution:
+    def isAnagram(self, s: str, t: str) -> bool:
+        if len(s)!=len(t):
+            return False
+        for i in set(s):
+            if s.count(i)!=t.count(i):
+                return False
+        return True
