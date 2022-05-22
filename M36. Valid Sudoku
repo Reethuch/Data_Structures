@@ -1,0 +1,39 @@
+#box case yet to finish
+class Solution:
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        N = 9
+        rows = [set() for _ in range(N)]
+        cols = [set() for _ in range(N)]
+        boxes = [set() for _ in range(N)]
+        print(rows, cols,"ll")
+        for i in board:
+            f = {"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0, "8":0,"9":0}
+            for j in i:
+                if j in f.keys():
+                    f[j]+=1
+            if max(f.values())>1:
+                return False
+        #Transpose
+        rez = [[board[j][i] for j in range(len(board))] for i in range(len(board[0]))]
+        for i in rez:
+            f = {"1":0, "2":0, "3":0, "4":0, "5":0, "6":0, "7":0, "8":0,"9":0}
+            for j in i:
+                if j in f.keys():
+                    f[j]+=1
+            if max(f.values())>1:
+                return False
+        # r = [[0]*9]*9
+        # print(r)
+        # for i in range(len(board)):
+        #     for j in range(len(i)):
+        #         r[i/3][j/3].append()
+                
+            
+        
+
+        
+                
+                
+        return True
+
+        
