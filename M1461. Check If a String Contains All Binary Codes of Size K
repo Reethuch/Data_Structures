@@ -1,0 +1,15 @@
+class Solution:
+    def hasAllCodes(self, s: str, k: int) -> bool:
+        max_num = 2**k-1
+        
+        while max_num!=-1:
+            ss = str(bin(max_num))[2:]
+            if len(ss)!=k:
+                pp="0"*(k-len(ss))+ss
+            else:
+                pp=ss
+            max_num-=1
+            if pp not in s:
+                return False
+        return True
+        
