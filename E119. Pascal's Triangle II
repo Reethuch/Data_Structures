@@ -1,0 +1,24 @@
+class Solution:
+    def getRow(self, rowIndex: int) -> List[int]:
+        if rowIndex==0:
+            return [1]
+        if rowIndex==1:
+            return [1,1]
+        if rowIndex==2:
+            return [1, 2, 1]
+        res = [[1],[1,1]]
+        test = 3
+        while test<=rowIndex+1:
+            l = [0]*test
+            for i in range(len(l)):
+                if i==0 or i==(len(l)-1):
+                    l[0], l[-1]= 1, 1
+                else:
+                    l[i] = res[test-2][i-1] + res[test-2][i]
+            res.append(l)
+            test +=1
+        return res[rowIndex]
+        
+        ///
+        Runtime: 45 ms, faster than 43.64% of Python3 online submissions for Pascal's Triangle II.
+Memory Usage: 13.8 MB, less than 97.34% of Python3 online submissions for Pascal's Triangle II
