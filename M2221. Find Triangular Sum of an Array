@@ -12,5 +12,5 @@ class Solution:
             k-=1
         return nums[0]
         
-      Runtime: 4952 ms, faster than 18.98% of Python3 online submissions for Find Triangular Sum of an Array.
-Memory Usage: 14 MB, less than 84.50% of Python3 online submissions for Find Triangular Sum of an Array.
+     Runtime: 2700 ms, faster than 83.94% of Python3 online submissions for Find Triangular Sum of an Array.
+Memory Usage: 14.2 MB, less than 27.75% of Python3 online submissions for Find Triangular Sum of an Array.
