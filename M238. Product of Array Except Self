@@ -1,0 +1,18 @@
+import math
+class Solution:
+    def productExceptSelf(self, nums: List[int]) -> List[int]:
+        X = math.prod(nums)
+        if nums.count(0)>1:
+            return [0]*len(nums)
+        if nums.count(0)==1:
+            ind = nums.index(0)
+            nums.remove(0)
+            X = math.prod(nums)
+            nums = [0]*len(nums)
+            nums.insert(ind, X)
+            return nums
+        for i in range(len(nums)):
+            nums[i] = X//nums[i]
+            # print(nums)
+        return nums
+        
