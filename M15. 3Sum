@@ -1,0 +1,62 @@
+class Solution:
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        res = []
+        nums.sort()
+        for i in range(len(nums)):
+            if nums[i] > 0:
+                break
+            if i == 0 or nums[i - 1] != nums[i]:
+                self.twoSumII(nums, i, res)
+        return res
+
+    def twoSumII(self, nums: List[int], i: int, res: List[List[int]]):
+        lo, hi = i + 1, len(nums) - 1
+        while (lo < hi):
+            sum = nums[i] + nums[lo] + nums[hi]
+            if sum < 0:
+                lo += 1
+            elif sum > 0:
+                hi -= 1
+            else:
+                res.append([nums[i], nums[lo], nums[hi]])
+                lo += 1
+                hi -= 1
+                while lo < hi and nums[lo] == nums[lo - 1]:
+                    lo += 1
+# class Solution:
+#     def threeSum(self, nums: List[int]) -> List[List[int]]:
+#         if len(nums)==0 or len(nums)==1:
+#             return []
+#         nums.sort()
+#         lo = 0
+#         res = []
+#         hi = len(nums)-1
+#         for i in range(len(nums)):
+#             if nums[i]>0:
+#                 break
+#             s = nums[i] + nums[lo] + nums[hi]
+            
+#             while(s<0):
+#                 lo += 1
+#                 s = nums[i] + nums[lo] + nums[hi]
+#             while s>0:
+#                 hi -= 1
+#                 s = nums[i] + nums[lo] + nums[hi]
+#             if s==0 and lo!=hi:
+#                 res.append([nums[i], nums[lo], nums[hi]])
+#                 print(res,"->res")
+#         res = []
+#         op = []
+#         for i in range(len(nums)):
+#             # tar = -nums[i]
+#             if nums[i]>0:
+#                 break
+#             for j in range(i+1, len(nums)):
+#                 tar1 = -nums[i] - nums[j]
+                
+#                 if tar1 in nums[j+1:]:
+#                     res = [nums[i], nums[j], tar1]
+#                     if res not in op:
+#                         op.append(res)
+#         return op
+        
