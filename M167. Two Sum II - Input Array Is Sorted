@@ -1,0 +1,11 @@
+class Solution:
+    def twoSum(self, n: List[int], target: int) -> List[int]:
+        f = 0
+        l = len(n)-1
+        while f<l:
+            if (n[f]+n[l])>target:
+                l -= 1
+            elif (n[f]+n[l])<target:
+                f += 1
+            else:
+                return [f+1, l+1]
