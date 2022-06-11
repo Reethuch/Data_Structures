@@ -1,0 +1,21 @@
+class Solution:
+    def minOperations(self, nums: List[int], x: int) -> int:
+        lsa = sum(nums) - x
+        # print(lsa)
+        l = 0
+        r = 0
+        curr = 0
+        maxi = -1
+        for r in range(len(nums)):
+            curr += nums[r]
+            # print("curr::1",curr)
+            while curr>lsa and l<=r:
+                curr -= nums[l]
+                l += 1
+            # print(curr,"::curr")
+            if curr == lsa:
+                maxi = max(maxi, r-l+1)
+        if maxi==-1:
+            return -1
+        else :
+            return len(nums)-maxi
