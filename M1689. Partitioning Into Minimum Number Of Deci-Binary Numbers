@@ -1,0 +1,9 @@
+class Solution:
+    def minPartitions(self, n: str) -> int:
+        # print(max(n))
+        # while n:
+            # print(type(n))
+        return int(max(n))
+            
+            
+        
