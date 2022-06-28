@@ -1,0 +1,21 @@
+class Solution:
+    def minDeletions(self, s: str) -> int:
+        d = {}
+        for i in s:
+            if i not in d.keys():
+                d[i] = 1
+            else:
+                d[i] += 1
+        k = list(d.values())
+        s1 = sum(k)
+        if len(list(set(k)))==len(k):
+            return 0
+        k.sort(reverse=True)
+        # print(k)
+        for j in range(len(k)):
+            while k.count(k[j])>1 and k[j]!=0:
+                k[j] -= 1
+        # print(k)
+        return s1- sum(k)
+        
+        
