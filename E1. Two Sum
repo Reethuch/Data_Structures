@@ -5,3 +5,12 @@ class Solution:
             if t in nums[i+1:]:
                 return [i,nums.index(t,i+1,len(nums))]
         return 0
+
+# 2 nd time
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for i in range(len(nums)):
+            search_num = target - nums[i]
+            if search_num in nums[i+1:]:
+                return [i, nums.index(search_num, i+1, )]
+        
