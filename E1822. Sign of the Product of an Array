@@ -1,0 +1,19 @@
+class Solution:
+    def signFunc(self, a: int) -> int:
+        if a > 0:
+            return 1
+        if a < 0:
+            return -1
+        if a == 0:
+            return 0
+        
+    def arraySign(self, nums: List[int]) -> int:
+        a = 1
+        for i in nums:
+            a *= i
+        return Solution.signFunc(self, a)
+        
+
+       
+        Runtime: 65 ms, faster than 89.09% of Python3 online submissions for Sign of the Product of an Array.
+Memory Usage: 14.1 MB, less than 35.80% of Python3 online submissions for Sign of the Product of an Array.
