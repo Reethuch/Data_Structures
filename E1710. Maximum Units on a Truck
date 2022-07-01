@@ -1,0 +1,24 @@
+class Solution:
+    def maximumUnits(self, boxTypes: List[List[int]], truckSize: int) -> int:
+        for i in range(len(boxTypes)):
+            boxTypes[i][0], boxTypes[i][1] = boxTypes[i][1], boxTypes[i][0]
+        boxTypes.sort(reverse=True)
+        j = 0
+        res = 0
+        while truckSize:
+            try:
+                if truckSize<=boxTypes[j][1]:
+                    res += (boxTypes[j][0] * truckSize)
+                    truckSize = 0
+                else:
+                    res += (boxTypes[j][0] * boxTypes[j][1])
+                    truckSize -= boxTypes[j][1]
+                j += 1
+            except:
+                # print(truckSize, j, boxTypes)
+                break
+        return res
+            
+        
+        Runtime: 160 ms, faster than 94.64% of Python3 online submissions for Maximum Units on a Truck.
+Memory Usage: 14.4 MB, less than 83.07% of Python3 online submissions for Maximum Units on a Truck.
