@@ -1,0 +1,22 @@
+class Solution:
+    def areAlmostEqual(self, s1: str, s2: str) -> bool:
+        if s1==s2:
+            return True
+        mis = []
+        found = 0
+        c = 0
+        for i in range(len(s1)):
+            if s1[i]!=s2[i]:
+                mis.append([s2[i],s1[i]])
+                found = 1
+                c += 1
+            if c>2:
+                return False
+        print(c, mis)
+        if len(mis)==2 and mis[0][:]==mis[1][::-1]:
+            return True
+        else:
+            return False
+        
+                
+        
