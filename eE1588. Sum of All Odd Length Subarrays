@@ -1,0 +1,21 @@
+1588. Sum of All Odd Length Subarrays
+1588. Sum of All Odd Length Subarrays
+class Solution:
+    def mergeAlternately(self, word1: str, word2: str) -> str:
+        p1, p2 = 0, 0
+        res = ""
+        # for i in range(len(word1)+len(word2)):
+        # while True:
+        while p1<len(word1) and p2<len(word2):
+            res = res+word1[p1]+word2[p2]
+            p1 += 1
+            p2 += 1
+        else:
+            if p1<len(word1):
+                res = res + word1[p1:]
+            if p2<len(word2):
+                res = res + word2[p2:]
+        return res
+        
+                
+        
