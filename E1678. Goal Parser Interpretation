@@ -1,0 +1,23 @@
+class Solution:
+    def interpret(self, command: str) -> str:
+        res = command
+        res = res.replace("()","o").replace("(al)","al")
+        return res
+        # i = 0
+        # res = ""
+        # while i<len(command):
+        #     if command[i]=="(" and command[i+1]==")":
+        #         res += "o"
+        #         i+=2
+        #     elif command[i]=="(" and command[i+1]=="a":
+        #         res += "al"
+        #         i += 4
+        #     else:
+        #         res += "G"
+        #         i+=1
+        # # if command[-1]=="G":
+        # #     return res+"G"
+        # # else:
+        # return res
+                    
+        
