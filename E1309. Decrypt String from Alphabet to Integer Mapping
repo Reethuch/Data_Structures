@@ -1,0 +1,14 @@
+class Solution:
+    def freqAlphabets(self, s: str) -> str:
+        res = ""
+        l = []
+        for i in range(len(s)):
+            if s[i]=='#':
+                k = l.pop()
+                k = l.pop()+k
+                l.append(k)
+            else:
+                l.append(s[i])
+        for j in l:
+            res += chr(int(j)+96)
+        return res
