@@ -1,15 +1,15 @@
+1588. Sum of All Odd Length Subarrays
+1588. Sum of All Odd Length Subarrays
 class Solution:
-    def diagonalSum(self, mat: List[List[int]]) -> int:
-        n = len(mat)
-        l = 0
-        r = n - 1
-        s = 0
-        for i in range(n):
-            s += mat[i][l] + mat[i][r]
-            l += 1
-            r -= 1
-        if n%2==0:
-            return s
-        else:
-            return s - mat[n//2][n//2]
+    def sumOddLengthSubarrays(self, arr: List[int]) -> int:
+        res = sum(arr)
+        l = len(arr)
+        for i in range(3, l+1, 2):
+            for j in range(l):
+                if i+j>l:
+                    break
+                res += sum(arr[j:i+j])
+        return res
+      
+            
         
