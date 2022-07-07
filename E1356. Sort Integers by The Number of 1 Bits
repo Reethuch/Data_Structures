@@ -1,0 +1,16 @@
+class Solution:
+    def sortByBits(self, arr: List[int]) -> List[int]:
+        d = {}
+        res = []
+        for i in arr:
+            k = bin(i)
+            n = k.count('1')
+            if n not in d.keys():
+                d[n] = [i]
+            else:
+                d[n].append(i)
+        for j in sorted(d):
+            d[j].sort()
+            res.extend(d[j])
+        return res
+        
