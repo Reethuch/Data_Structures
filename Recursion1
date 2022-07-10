@@ -1,0 +1,29 @@
+class Solution:
+    def myPow(self, x: float, n: int) -> float:
+        if n==0:
+            return 1
+        elif n<0:
+            return 1/self.myPow(x, -n)
+        elif n%2==0:
+            # print(self.myPow(x*x, n//2),"1")
+            return self.myPow(x*x, n//2)
+        else:
+            # print(self.myPow(x*x, n//2)*x,"2")
+            return self.myPow(x*x, n//2) * x
+        
+        
+        # method 2 : x**n = 2**(n*log x/log 2) format answer
+        # method 1 Recursion
+        # if n>0:
+        #     self.res = self.res * x
+        #     n -= 1
+        #     # print(self.res, "res")
+        #     self.myPow(x, n)
+        # elif n<0:
+        #     self.res = self.res * (1/x)
+        #     n += 1
+        #     self.myPow(x, n)
+        # # else:
+        # #     print((self.res))
+        # return self.res  // run time error
+        
