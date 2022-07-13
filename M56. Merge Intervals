@@ -1,0 +1,22 @@
+class Solution:
+    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+        intervals.sort()
+        mer = []
+        for i in intervals:
+            if not mer or mer[-1][1]<i[0]:
+                mer.append(i)
+            else:
+                mer[-1][1] = max(mer[-1][1], i[1])
+        return mer
+        # curr = []
+        # new = intervals[0]
+        # for i in range(len(intervals)-1):
+        #     if new[1]>=intervals[i+1][0]:
+        #         curr.append([new[0],intervals[i+1][1]])
+        #         new = [new[0],intervals[i+1][1]]
+        #     else:
+        #         curr.append(intervals[i])
+        #         new = intervals[i]
+        #     print(curr)
+                
+        
